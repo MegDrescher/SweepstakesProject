@@ -8,50 +8,50 @@ namespace Sweepstakes.cs
 {
     class SweepstakesStackManager : ISweepstakesManager
     {
-        Stack<Sweepstakes> sweepstakesStack = new Stack<Sweepstakes>();
-        Stack<Sweepstakes> tempSweepstakesStack = new Stack<Sweepstakes>();
+        Stack<Sweepstakes1> sweepstakesStack = new Stack<Sweepstakes1>();
+        Stack<Sweepstakes1> tempSweepstakesStack = new Stack<Sweepstakes1>();
 
         
-        public Sweepstakes GetSweepstakes(string name)
+        public Sweepstakes1 GetSweepstakes1(string name)
         {
-            Sweepstakes poppedSweepstakes;
+            Sweepstakes1 poppedSweepstakes;
             
             poppedSweepstakes = sweepstakesStack.Pop();
             if (poppedSweepstakes.Name == name)
             {
-                IEnumerable<Sweepstakes> tempSweepstakesStack = null;
-                foreach (Sweepstakes sweepstakes in tempSweepstakesStack)
+                IEnumerable<Sweepstakes1> tempSweepstakesStack = null;
+                foreach (Sweepstakes1 sweepstakes in tempSweepstakesStack)
                 {
                     sweepstakesStack.Push(poppedSweepstakes);
                 }
-                tempSweepstakesStack = new Stack<Sweepstakes>();
+                tempSweepstakesStack = new Stack<Sweepstakes1>();
                 return poppedSweepstakes;         
             }
-            else if (Sweepstakes.Count > 0)
+            else if (Sweepstakes1.Count > 0)
             {
                 
                 tempSweepstakesStack.Push(poppedSweepstakes);
-                return GetSweepstakes(name);           
+                return GetSweepstakes1(name);           
             }
             else
             {
                 
                 tempSweepstakesStack.Push(poppedSweepstakes);
-                foreach( Sweepstakes sweepstakes in tempSweepstakesStack)
+                foreach( Sweepstakes1 sweepstakes in tempSweepstakesStack)
                 {
                     sweepstakesStack.Push(sweepstakes);
                 }
-                tempSweepstakesStack = new Stack<Sweepstakes>();
+                tempSweepstakesStack = new Stack<Sweepstakes1>();
                 return null;
             }
         }
 
-        public Sweepstakes GetSweepstakes()
+        public Sweepstakes1 GetSweepstakes()
         {
             throw new NotImplementedException();
         }
 
-        public void InsertSweepstakes (Sweepstakes sweepstakes)
+        public void InsertSweepstakes (Sweepstakes1 sweepstakes)
         {
 
         }

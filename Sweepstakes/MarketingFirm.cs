@@ -9,7 +9,7 @@ namespace Sweepstakes.cs
     class MarketingFirm
     {
         public ISweepstakesManager sweepstakesManager;
-        Sweepstakes selectedSweepstakes;
+        Sweepstakes1 selectedSweepstakes;
         string sweepstakesName;
         string marketingFirmName;
         int action;
@@ -29,12 +29,12 @@ namespace Sweepstakes.cs
             throw new NotImplementedException();
         }
 
-        public void InsertSweepstakes(Sweepstakes sweepstakes)
+        public void InsertSweepstakes(Sweepstakes1 sweepstakes)
         {
             sweepstakesManager.InsertSweepstakes(sweepstakes);
         }
         
-        Sweepstakes GetSweepstakes()
+        Sweepstakes1 GetSweepstakes()
         {
             return sweepstakesManager.GetSweepstakes();
         }

@@ -28,7 +28,7 @@ namespace Sweepstakes.cs
             }
         }
 
-        public int RegistrationNumber { get; internal set; }
+        public int RegistrationNumber { get; set; }
 
         public Contestant()
         {
